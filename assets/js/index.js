@@ -8,9 +8,10 @@ let button = {
   background: "#4dc0b5",
   position: "absolute",
   top: "0",
-  right: "614px",
+  right: "570px",
   marginTop: "50px",
-  cursor: "pointer"
+  cursor: "pointer",
+  borderRadius: "5px"
 };
 
 export default class Layout extends Component {
@@ -35,7 +36,7 @@ export default class Layout extends Component {
     return (
         <div id="starter">
           <h1  className={`${this.state.color}`}>This React App is Live</h1>
-          <div onClick={this.letterColor} style={button}>Change Color</div>
+          <div onClick={this.letterColor} style={button}>Click Me To Change Color</div>
         </div>
     );
   }
