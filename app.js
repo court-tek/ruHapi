@@ -1,18 +1,24 @@
-const hapi = require('hapi');
-
-// init Server
-const server = new Hapi.Serve();
+const Hapi = require('hapi');
 
 // Add Connection
-server.connection({
-  port: 5000,
+const server = Hapi.server({
+  port: 8000,
   host: 'localhost'
 });
 
-// Start server
-server.start((err) => {
-  if (err) {
-    throw err:
+// Home Route
+server.route({
+  method:'GET',
+  path:'/',
+  handler: (request, reply) => {
+    reply('Hello String');
   }
-  console.log(`The Server started at: ${server.info.uri}`);
 });
+// Start server
+const init = async () => {
+
+    await server.start();
+    console.log(`Server running at: ${server.info.uri}`);
+};
+
+init();
